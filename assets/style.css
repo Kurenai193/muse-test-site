@@ -1,0 +1,146 @@
+/* 無料ではじめるデジタル生活 共通デザイン v1.4
+   v1.3の色分けを維持し、スマホのスクロール削減のためヘッダー圧縮・目次・パンくずを追加
+   白+薄い水色を基本に、青(メイン/AI)・緑(スマホ活用)・オレンジ(土台作り)
+   スマホ優先 / 基本16px / 補足・メニューも15px以上 / タップ領域48px目安
+   オレンジは面・線・大きな印だけに使い、本文の文字には使わない */
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Hiragino Sans", sans-serif;
+  font-size: 16px;
+  line-height: 1.8;
+  color: #222;
+  background: #f2f8fb;
+}
+a { color: #1d6fb8; }
+a:focus-visible { outline: 3px solid #1d6fb8; outline-offset: 2px; }
+
+/* ヘッダー(v1.4: 副題を外し、メニューは2項目に絞って1段に収める) */
+.site-header {
+  background: #fff;
+  color: #16324f;
+  padding: 16px 16px 12px;
+  border-bottom: 4px solid #1d6fb8;
+  border-image: linear-gradient(90deg, #1d6fb8 0 34%, #1e7d46 34% 67%, #b45309 67% 100%) 1;
+}
+.site-header .site-name { margin: 0; font-size: 22px; font-weight: 700; line-height: 1.4; }
+.site-header .site-name a { color: #14406b; text-decoration: none; }
+.global-nav { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
+.global-nav a {
+  display: inline-flex; align-items: center; min-height: 48px;
+  padding: 10px 14px; border-radius: 999px;
+  background: #e8f4fd; border: 1px solid #b9d9ee; color: #14406b; text-decoration: none; font-size: 16px;
+}
+.global-nav a:active { background: #d3e9fa; }
+
+/* パンくず */
+.breadcrumb { font-size: 15px; line-height: 1.6; color: #555; margin: 4px 0 0; }
+.breadcrumb a { display: inline-flex; align-items: center; min-height: 40px; }
+
+/* 本文 */
+main { max-width: 720px; margin: 0 auto; padding: 16px; }
+.card {
+  background: #fff; border-radius: 16px; padding: 20px 16px;
+  margin: 16px 0; box-shadow: 0 2px 10px rgba(20, 64, 107, .08);
+}
+.card h1 {
+  margin-top: 0; font-size: 22px; line-height: 1.5; color: #14406b;
+  border-left: 5px solid #1d6fb8; padding-left: 10px;
+}
+.card h2 {
+  margin-top: 0; font-size: 20px; line-height: 1.5; color: #14406b;
+  border-left: 5px solid #1d6fb8; padding-left: 10px;
+}
+.card h3 { font-size: 18px; margin-top: 24px; line-height: 1.5; color: #14406b; }
+.lead { font-size: 17px; }
+.note { color: #555; font-size: 15px; line-height: 1.7; }
+.badge {
+  display: inline-block; padding: 3px 10px; border-radius: 999px;
+  background: #eaf3fc; color: #14406b; font-size: 15px; font-weight: 700; margin-right: 6px;
+}
+.badge-free { background: #e7f6ec; color: #14532d; }
+.conclusion {
+  border: 2px solid #1d6fb8; border-radius: 12px; padding: 14px 16px; background: #eff6ff;
+}
+.conclusion p { margin: 6px 0; }
+dl.facts { margin: 0; }
+dl.facts dt { font-weight: 700; margin-top: 14px; }
+dl.facts dd { margin: 4px 0 0; }
+.ad-notice {
+  border: 1px solid #e8cf8f; border-left: 6px solid #d97706; border-radius: 8px; padding: 10px 12px;
+  background: #fff7db; font-size: 15px; line-height: 1.7; color: #374151;
+}
+.btn-link {
+  display: inline-flex; align-items: center; min-height: 48px;
+  padding: 10px 16px; border-radius: 10px; background: #1d6fb8; color: #fff;
+  text-decoration: none; font-weight: 700; font-size: 16px;
+}
+.btn-link:active { background: #185a94; }
+ul.plain { padding-left: 20px; }
+.source { font-size: 15px; line-height: 1.7; color: #555; border-top: 1px solid #e5e7eb; padding-top: 12px; }
+
+/* 目次(privacy / disclosure) */
+.toc {
+  border: 1px solid #b9d9ee; border-radius: 12px; background: #f4fafd;
+  padding: 12px 16px; margin: 16px 0 8px;
+}
+.toc-title { margin: 0 0 6px; font-weight: 700; color: #14406b; }
+.toc ul { margin: 0; padding-left: 20px; }
+.toc li a { display: inline-flex; align-items: center; min-height: 44px; }
+
+/* ページ末尾のトップへ戻る */
+.back-top { margin: 20px 0 4px; }
+.back-top a { display: inline-flex; align-items: center; min-height: 48px; font-weight: 700; }
+
+/* はじめての方へ(水色の案内ボックス) */
+.guide-box { background: #e8f4fd; border: 1px solid #b9d9ee; }
+
+/* カテゴリの色分けカード(トップページ) */
+.section-title {
+  font-size: 20px; line-height: 1.5; color: #14406b;
+  border-left: 5px solid #1d6fb8; padding-left: 10px; margin: 24px 0 4px;
+}
+.cat-card {
+  --cat: #1d6fb8; --cat-bg: #eaf3fc; --cat-title: #1d6fb8;
+  position: relative; display: block; text-decoration: none; color: #222;
+  background: var(--cat-bg); border: 1px solid rgba(0,0,0,.05); border-radius: 16px;
+  padding: 16px; margin: 12px 0;
+  box-shadow: 0 2px 10px rgba(20, 64, 107, .08);
+}
+.cat-card::after {
+  content: "→"; position: absolute; right: 14px; bottom: 12px;
+  width: 38px; height: 38px; border-radius: 50%;
+  background: var(--cat); color: #fff; font-weight: 700;
+  display: flex; align-items: center; justify-content: center;
+}
+.cat-card h3 { margin: 0 0 6px; font-size: 19px; line-height: 1.5; color: var(--cat-title); }
+.cat-card p { margin: 0; padding-right: 44px; }
+.cat-ai { --cat: #1d6fb8; --cat-bg: #eaf3fc; --cat-title: #1d6fb8; }
+.cat-smartphone { --cat: #1e7d46; --cat-bg: #e7f6ec; --cat-title: #176b3a; }
+.cat-start { --cat: #b45309; --cat-bg: #fff4e0; --cat-title: #9c4a03; }
+
+/* カテゴリページの見出しアクセント */
+.accent-green h1, .accent-green h2 { border-left-color: #1e7d46; }
+.accent-orange h1, .accent-orange h2 { border-left-color: #b45309; }
+
+/* フッター */
+.site-footer { padding: 24px 16px 32px; text-align: center; color: #44586a; font-size: 15px; background: #eaf5fc; margin-top: 8px; }
+.site-footer nav { display: flex; flex-wrap: wrap; gap: 8px 16px; justify-content: center; margin-bottom: 12px; }
+.site-footer nav a { display: inline-flex; align-items: center; min-height: 48px; font-size: 15px; }
+
+@media (min-width: 768px) {
+  .site-header .site-name { font-size: 26px; }
+  .card { padding: 24px; }
+}
+
+/* ===== B案：768px以上で1段型ヘッダー（左にサイト名・右にメニュー、本文幅720pxに合わせて中央寄せ） ===== */
+@media (min-width: 768px) {
+  .site-header {
+    display: flex; align-items: center; flex-wrap: wrap; column-gap: 16px;
+    padding-top: 12px; padding-bottom: 12px;
+    padding-left: max(16px, calc((100% - 720px) / 2 + 16px));
+    padding-right: max(16px, calc((100% - 720px) / 2 + 16px));
+  }
+  .global-nav { margin-top: 0; margin-left: auto; }
+}
