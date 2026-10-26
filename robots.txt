@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://kurenai193.github.io/muse-test-site/sitemap.xml
